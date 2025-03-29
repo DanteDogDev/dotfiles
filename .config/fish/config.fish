@@ -12,6 +12,8 @@ end
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias diff='delta'
+
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias config-lazy='lazygit -git-dir=$HOME/dotfiles --work-tree=$HOME'
 
 alias dario='fastfetch'
