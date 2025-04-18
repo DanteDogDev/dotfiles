@@ -2,7 +2,7 @@
 	name = Dante Harper
 	email = dantedigdog@gmail.com
 [credential]
-  helper = cache
+  helper = store
 [init]
 	defaultBranch = main
 [core]
