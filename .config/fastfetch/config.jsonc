@@ -1,9 +1,7 @@
 //   _____ _____ _____ _____ _____ _____ _____ _____ _____ 
 //  |   __|  _  |   __|_   _|   __|   __|_   _|     |  |  |
 //  |   __|     |__   | | | |   __|   __| | | |   --|     |
-//  |__|  |__|__|_____| |_| |__|  |_____| |_| |_____|__|__|  NYARCH
-//
-//  by Bina
+//  |__|  |__|__|_____| |_| |__|  |_____| |_| |_____|__|__|
 {
   "logo": {
     "source": "~/.config/fastfetch/images/nyarch.png",
@@ -39,14 +37,20 @@
       "keyColor": "red"
     },
     {
+      "type": "display",
+      "key": "  󰍹 Display",
+      "format": "{1}x{2} @ {3}Hz",
+      "keyColor": "green"
+    },
+    {
       "type": "packages",
       "key": "  󰏗 Packages",
       "keyColor": "green"
     },
     {
-      "type": "display",
-      "key": "  󰍹 Display",
-      "format": "{1}x{2} @ {3}Hz",
+      "type": "disk",
+      "key": "   Disk Space",
+      "format": "{0} / {2} ({3})",
       "keyColor": "green"
     },
     {
