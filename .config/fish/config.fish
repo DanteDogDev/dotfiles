@@ -16,5 +16,6 @@ alias diff='delta'
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias config-lazy='lazygit -git-dir=$HOME/dotfiles --work-tree=$HOME'
+alias nv='fd --hidden --type f --exclude .git | fzf --reverse | xargs nvim'
 
 alias dario='fastfetch'
