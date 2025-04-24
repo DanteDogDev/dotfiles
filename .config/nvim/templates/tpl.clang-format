@@ -1,0 +1,7 @@
+---
+ColumnLimit: 150
+TabWidth: 2
+UseTab: Never
+PointerAlignment: Left
+BreakTemplateDeclarations: Yes
+BreakAfterAttributes: Always
