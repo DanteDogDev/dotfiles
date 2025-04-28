@@ -1,25 +1,33 @@
 return {
-  {
-    "DanteDogDev/ToastVim",
-    branch = "dev",
-    ---@type ToastVim.Config
-    opts = {},
-  },
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      -- When installing formatter you need to set it here
-      formatters_by_ft = {
-        lua = { "stylua" },
+  "DanteDogDev/ToastVim",
+  branch = "dev",
+  import = "toastvim.plugins",
+  dir = "~/git/ToastVim/",
+  ---@type ToastVim.Config
+  opts = {
+    formatters_by_ft = {
+      lua = { "stylua" },
+      markdown = { "markdownlint-cli2", "markdown-toc" },
+    },
+    linters_by_ft = {
+      markdown = { "markdownlint-cli2" },
+    },
+    lsp = {
+      keymaps = {
+        {mode = "n", keys = "<leader>ch", action = "<CMD>LspClangdSwitchSourceHeader<CR>", opts = {desc = "Switch to Source Header"}, ft = {"cpp","c"}},
+      },
+    },
+    template = {
+      -- stylua: ignore
+      expressions = {
+        ["${FILENAME}"] = function() return vim.fn.expand("%:t:r") end,
+        ["${DATE}"] = function() return os.date("%d/%m/%y") end,
+        ["${AUTHOR}"] = function() return vim.fn.system("git config user.name"):gsub("\n", "") end,
+        ["${EMAIL}"] = function() return vim.fn.system("git config user.email"):gsub("\n", "") end,
+        ["${PROJECT}"] = function() return vim.fn.system('powershell -Command "Split-Path -Leaf (Get-Location)"'):gsub("\n", "") end,
       },
     },
   },
-
-  {
-    "mfussenegger/nvim-lint",
-    opts = {
-      -- When installing linter you need to set it here
-      linters_by_ft = {},
-    },
-  },
 }
+
+--vim.api.nvim_buf_set_keymap(0,"n","<leader>ch","<CMD>LspClangdSwitchSourceHeader<CR>", {desc = "Switch to Source Header",silent = true})
