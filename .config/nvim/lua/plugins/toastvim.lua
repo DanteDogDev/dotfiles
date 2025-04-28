@@ -1,8 +1,8 @@
 return {
   "DanteDogDev/ToastVim",
-  branch = "dev",
   import = "toastvim.plugins",
-  dir = "~/git/ToastVim/",
+  -- branch = "dev",
+  -- dir = "~/git/ToastVim/",
   ---@type ToastVim.Config
   opts = {
     formatters_by_ft = {
