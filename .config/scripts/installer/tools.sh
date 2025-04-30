@@ -1,4 +1,6 @@
 PACMAN=(
+  # Internet
+  networkmanager
   # hyprland
   hyprland
   xdg-desktop-portal-hyprland
