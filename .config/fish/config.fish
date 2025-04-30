@@ -9,6 +9,11 @@ function y
 	rm -f -- "$tmp"
 end
 
+function ssh-init
+  ssh-agent -c | source
+  ssh-add ~/.ssh/id_ed25519
+end
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias delta='delta --side-by-side'
@@ -19,5 +24,6 @@ alias config-lazy='lazygit -git-dir=$HOME/dotfiles --work-tree=$HOME'
 
 alias nv='fd --hidden --type f --exclude .git | fzf --reverse | xargs nvim'
 alias lg='lazygit'
+
 
 alias dario='fastfetch'

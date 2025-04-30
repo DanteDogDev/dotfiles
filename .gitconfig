@@ -1,8 +1,6 @@
 [user]
 	name = Dante Harper
 	email = dantedigdog@gmail.com
-[credential]
-  helper = store
 [init]
 	defaultBranch = main
 [core]
