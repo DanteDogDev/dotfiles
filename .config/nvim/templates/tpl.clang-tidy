@@ -160,4 +160,4 @@ CheckOptions:
     value: CamelCase
   - key: readability-identifier-naming.EnumConstantCase
     value: CamelCase
-   value: CamelCase
+    value: CamelCase
