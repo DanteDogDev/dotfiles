@@ -9,22 +9,6 @@ PACMAN=(
   # nvidia
   nvidia
   nvidia-prime
-  # fonts
-  noto-fonts
-  noto-fonts-extra
-  noto-fonts-cjk
-  noto-fonts-emoji
-  # Internet
-  networkmanager
-  # clipboard
-  wl-clipboard
-  cliphist
-  # brightness
-  brightnessctl
-  # status bar
-  waybar
-  # launcher
-  fuzzel
   # tools
   git
   7zip
@@ -42,6 +26,7 @@ PACMAN=(
   yazi
   git-delta
   # application
+  fuzzel
   kitty
   firefox
 )

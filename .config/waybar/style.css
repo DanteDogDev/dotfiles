@@ -1,6 +1,6 @@
 @import "./tokyonight.css";
 
-* {
+*{
   border: none;
   border-radius: 6;
   font-family: JetBrains Mono, sans-serif;
@@ -21,13 +21,24 @@ tooltip label {
   color: @tt_text;
 }
 
+menu {
+	border-radius: 15px;
+	background: @background;
+	color: @text;
+}
+
+menuitem {
+	border-radius: 15px;
+}
+
 #custom-power, #clock, #workspaces,
 #pulseaudio, #network, #backlight,
-#custom-kbd_backlight, #tray, #battery, #window {
+#custom-kbd_backlight, #tray, #battery, 
+#window, #bluetooth {
   padding: 2px 10px;
-  background: @background;
   border: 2px solid @border;
   color: @text;
+  background: @background;
 }
 
 /* CLOCK */

@@ -4,13 +4,14 @@
   "modules-left": [
     "custom/power", 
     "clock", 
-    "hyprland/workspaces"
+    "hyprland/window"
   ],
   "modules-center": [
-    "hyprland/window"
+    "hyprland/workspaces"
   ],
   "modules-right": [
     "pulseaudio",
+    "bluetooth",
     "network",
     "backlight",
     "custom/kbd_backlight",
@@ -58,8 +59,8 @@
   // MIDDLE
 
   "hyprland/window": {
-    "format": "{title}",
-    "icon": false,
+    "format": "",
+    "icon": true,
   },
 
   // RIGHT PART
@@ -75,13 +76,26 @@
     "on-click": "pavucontrol",
   },
 
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "󰂲",
+    "format-off": "󰂯 {status} (notify Dante)",
+    "interval": 30,
+    "on-click": "blueman-manager",
+    "format-no-controller": "󰂯 {status}"
+  },
+
   "network": {
     "format-wifi": "{essid} {icon}",
     "format-ethernet": "Ethernet 󰈀",
-    "tooltip-format": "{ipaddr} at {essid} ({signalStrength}%)",
+    "tooltip-format": " {ifname} via {gwaddri}",
+    "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+    "tooltip-format-disconnected": "Disconnected",
     "format-linked": "No IP ",
     "format-disconnected": "󰤮",
     "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+    "on-click": "nm-connection-editor",
   },
 
   "backlight": {
@@ -109,7 +123,7 @@
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",
     "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
     "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
   },
