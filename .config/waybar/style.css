@@ -1,4 +1,4 @@
-@import "./rose-pine.css";
+@import "./tokyonight.css";
 
 * {
   border: none;
@@ -9,115 +9,94 @@
 }
 
 #waybar {
-  background: @base;
-  border-bottom: 1px solid @subtle;
-  border-radius: 0;
-  color: @text;
+  background-color: transparent;
 }
 
 tooltip {
-  background: @surface;
-  border: 2px solid @muted;
+  background: @tt_background;
+  border: 2px solid @tt_border;
 }
 
 tooltip label {
-color: @text;
+  color: @tt_text;
 }
 
 #custom-power, #clock, #workspaces,
 #pulseaudio, #network, #backlight,
-#custom-kbd_backlight, #tray, #battery {
+#custom-kbd_backlight, #tray, #battery, #window {
   padding: 2px 10px;
-  background: @highlightLow;
-  border: 2px solid @highlightMed;
+  background: @background;
+  border: 2px solid @border;
+  color: @text;
 }
 
+/* CLOCK */
 #clock {
-  background: @rose;
-  color: @surface;
   font-weight: 900;
-  border: 0;
 }
 
+/* WORKSPACES */
 #workspaces button {
-  color: @muted;
+  color: @unselected;
   padding: 0 6px;
 }
-
 #workspaces button.active {
-  color: @love;
-  font-weight: 700;
+  color: @selected;
 }
 
-#workspaces button.urgent {
-  color: @surface;
-  background: @love;
-  font-weight: 900;
-  border: 0;
-}
-
+/* CURRENT WINDOW */
 #window {
-  background: @highlightLow;
-  color: @subtle;
-  padding: 0 10px;
 }
-
 window#waybar.empty #window {
   background: transparent;
+  border: 0px;
 }
 
-#pulseaudio.muted {
-  color: @surface;
-  background: @iris;
-  border: 0;
+/* AUDIO */
+/* FIGURE OUT HOW TO COLOR SPEAKER/MIC ICON SEPERATLY */
+#pulseaudio {
+  color: @audio;
+}
+#pulseaudio.muted { /*AUDIO*/
+  color: @error;
+}
+#pulseaudio.source-muted { /*MIC*/
+  border: 2px solid @error;
 }
 
-#pulseaudio.source-muted {
-  border: 2px solid @iris;
+/* NETWORK */
+#network {
+  color: @network;
+}
+#network.disabled, #network.disconnected {
+  color: @error;
 }
 
-#pulseaudio.buetooth {
-  color: @iris;
+/* BACKLIGHT */
+#backlight {
+  color: @backlight;
 }
-
-#network.disabled, #network.disconected {
-  color: @surface;
-  background: @love;
-  border: 0;
-}
-
 #custom-kbd_backlight.on {
-  color: @surface;
-  background: @gold;
-  border: 0;
+  color: @backlight;
 }
 
-#battery.warning:not(.charging) {
-  color: @love;
-  border: 2px solid @love;
-}
-
+/* BATTERY */
 @keyframes blink {
   to {
-    background-color: #fe9fa5;
-    color: @surface;
+    background-color: @battery_warning;
   }
 }
-
+#battery {
+  color: @battery;
+}
+#battery.warning:not(.charging) {
+  color: @error;
+}
 #battery.critical:not(.charging) {
-  color: @surface;
-  background: @love;
-  border: 0;
+  color: @error;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
-
-#battery.charging {
-  color: @surface;
-  background: @foam;
-  border: 0;
-}
-

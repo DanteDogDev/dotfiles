@@ -1,135 +1,116 @@
-// Waybar config
-// @author Xein
-
 {
-    "height": 24,
-    "spacing": 4,
-    "modules-left": [
-        "custom/power",
-        "clock",
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "hyprland/window"
-    ],
-    "modules-right": [
-        "pulseaudio",
-        "network",
-//	    "bluetooth",
-        "backlight",
-	      "custom/kbd_backlight",
-	      "tray",
-        "battery"
-    ],
+  "height": 24,
+  "spacing": 4,
+  "modules-left": [
+    "custom/power", 
+    "clock", 
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "backlight",
+    "custom/kbd_backlight",
+    "tray",
+    "battery",
+  ],
 
-    // MODULES
+  // LEFT
 
-    // HYPRLAND STUFF
-    "hyprland/workspaces" : {
-	"format" : "{icon}",
-	"format-icons" : {
-	    // Change this for every icon you want Dante
-	    "1" : "一",
-	    "2" : "二",
-	    "3" : "三",
-	    "4" : "四",
-	    "5" : "五",
-	    "6" : "六",
-	    "7" : "七",
-	    "8" : "八",
-	    "9" : "九",
-	    "10": "十"
-	},
-	"persistent-workspaces" : { "*" : 1 }
+  "custom/power": {
+    "format": "  ",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/scripts/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "shutdown",
+      "reboot": "reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate",
     },
+  },
 
-    "hyprland/window" : {
-        "format" : "{title}",
-	"icon" : true,
-	"icon-size" : 20
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y / %m / %d}",
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
     },
+    "persistent-workspaces": { "*": 1 },
+  },
 
-    // RIGHT PART
-    // Battery
-    // Tray
-    // Keyboard brightness???
-    // Brightness
-    // Bluetooth
-    // Internet
-    // Audio
-    
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  // MIDDLE
+
+  "hyprland/window": {
+    "format": "{title}",
+    "icon": false,
+  },
+
+  // RIGHT PART
+
+  "pulseaudio": {
+    "format": "{volume}% {icon}   {format_source}",
+    "format-muted": "  {format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "default": ["", "", ""],
     },
+    "on-click": "pavucontrol",
+  },
 
-    "tray": {
-        "icon-size": 20,
-        "spacing": 8
+  "network": {
+    "format-wifi": "{essid} {icon}",
+    "format-ethernet": "Ethernet 󰈀",
+    "tooltip-format": "{ipaddr} at {essid} ({signalStrength}%)",
+    "format-linked": "No IP ",
+    "format-disconnected": "󰤮",
+    "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+  },
+
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+  },
+
+  "custom/kbd_backlight": {
+    "format": "{}",
+    "exec": "sh ~/.config/waybar/scripts/kbd_backlight.sh",
+    "interval": 1,
+    "return-type": "json",
+  },
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 8,
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
     },
-
-    "custom/kbd_backlight": {
-        "format": "{}",
-        "exec": "sh ~/.config/waybar/scripts/kbd_backlight.sh",
-        "interval": 1,
-        "return-type": "json"
-    },
-
-    "backlight": {
-        "format": "{percent}% {icon}",
-        "format-icons": ["󰃞", "󰃟", "󰃠"]
-    },
-
-    // TODO: BLUETOOTH
-
-    "network": {
-        "format-wifi": " {bandwidthUpBits}  {bandwidthDownBits} {icon}",
-        "format-ethernet": "Ethernet 󰈀",
-        "tooltip-format": "{ipaddr} at {essid} ({signalStrength}%)",
-        "format-linked": "No IP ",
-        "format-disconnected": "󰤮",
-       	"format-icons" : ["󰤟", "󰤢", "󰤥", "󰤨"]
-    },
-
-    "pulseaudio": {
-        "format": "{volume}% {icon}   {format_source}",
-        "format-muted": "  {format_source}",
-        "format-source": "",
-        "format-source-muted": "",
-        "format-icons": {
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-  
-    // LEFT PART
-    // Power menu
-    // Clock
-
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y / %m / %d}"
-    },
-
-    "custom/power": {
-        "format" : "  ",
-		    "tooltip": false,
-		    "menu": "on-click",
-		    "menu-file": "$HOME/.config/waybar/scripts/power_menu.xml",
-		    "menu-actions": {
-			      "shutdown": "shutdown",
-			      "reboot": "reboot",
-			      "suspend": "systemctl suspend",
-			      "hibernate": "systemctl hibernate"
-		    }
-    }
+    "format": "{capacity}% {icon}",
+    "format-full": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+  },
 }

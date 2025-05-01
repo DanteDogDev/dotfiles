@@ -8,6 +8,8 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       markdown = { "markdownlint-cli2", "markdown-toc" },
+      jsonc = { "prettier" },
+      json = { "prettier" },
     },
     linters_by_ft = {
       markdown = { "markdownlint-cli2" },
