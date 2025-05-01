@@ -1,0 +1,23 @@
+/*
+* Variant: Rosé Pine
+* Maintainer: DankChoir
+*/
+
+@define-color base            #191724;
+@define-color surface         #1f1d2e;
+@define-color overlay         #26233a;
+
+@define-color muted           #6e6a86;
+@define-color subtle          #908caa;
+@define-color text            #e0def4;
+
+@define-color love            #eb6f92; /* Alert, low battery */
+@define-color gold            #f6c177; /* Keyboard light active */
+@define-color rose            #ebbcba; /* Time */
+@define-color pine            #31748f;
+@define-color foam            #9ccfd8; /* Charging */
+@define-color iris            #c4a7e7; /* Audio */
+
+@define-color highlightLow    #21202e;
+@define-color highlightMed    #403d52;
+@define-color highlightHigh   #524f67;

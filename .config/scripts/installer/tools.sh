@@ -1,11 +1,11 @@
 PACMAN=(
-  # Internet
-  networkmanager
   # hyprland
   hyprland
   xdg-desktop-portal-hyprland
   hyprpaper
   hyprpicker
+  gtk-engine-murrine
+  sassc
   # nvidia
   nvidia
   nvidia-prime
@@ -14,11 +14,15 @@ PACMAN=(
   noto-fonts-extra
   noto-fonts-cjk
   noto-fonts-emoji
+  # Internet
+  networkmanager
   # clipboard
   wl-clipboard
   cliphist
   # brightness
   brightnessctl
+  # status bar
+  waybar
   # launcher
   fuzzel
   # tools
@@ -26,21 +30,13 @@ PACMAN=(
   7zip
   grim
   slurp
-  # Neovim Stuff
-  neovim
-  lua
-  lua51
-  luarocks
-  curl
-  npm
-  rust
-  tree-sitter-cli
   # Finder
   ripgrep
   fd
   fzf
   ripgrep
   # tui
+  neovim
   fastfetch
   lazygit
   yazi
@@ -54,6 +50,7 @@ YAY=(
   # asus
   asusctl
   supergfxctl
+  # application
   vesktop
 )
 

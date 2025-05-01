@@ -14,6 +14,8 @@ function ssh-init
   ssh-add ~/.ssh/id_ed25519
 end
 
+fish_config theme dump > ~/.config/fish/tokyonight_night.theme
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias delta='delta --side-by-side'

@@ -1,0 +1,123 @@
+@import "./rose-pine.css";
+
+* {
+  border: none;
+  border-radius: 6;
+  font-family: JetBrains Mono, sans-serif;
+  font-size: 13px;
+  min-height: 0;
+}
+
+#waybar {
+  background: @base;
+  border-bottom: 1px solid @subtle;
+  border-radius: 0;
+  color: @text;
+}
+
+tooltip {
+  background: @surface;
+  border: 2px solid @muted;
+}
+
+tooltip label {
+color: @text;
+}
+
+#custom-power, #clock, #workspaces,
+#pulseaudio, #network, #backlight,
+#custom-kbd_backlight, #tray, #battery {
+  padding: 2px 10px;
+  background: @highlightLow;
+  border: 2px solid @highlightMed;
+}
+
+#clock {
+  background: @rose;
+  color: @surface;
+  font-weight: 900;
+  border: 0;
+}
+
+#workspaces button {
+  color: @muted;
+  padding: 0 6px;
+}
+
+#workspaces button.active {
+  color: @love;
+  font-weight: 700;
+}
+
+#workspaces button.urgent {
+  color: @surface;
+  background: @love;
+  font-weight: 900;
+  border: 0;
+}
+
+#window {
+  background: @highlightLow;
+  color: @subtle;
+  padding: 0 10px;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+}
+
+#pulseaudio.muted {
+  color: @surface;
+  background: @iris;
+  border: 0;
+}
+
+#pulseaudio.source-muted {
+  border: 2px solid @iris;
+}
+
+#pulseaudio.buetooth {
+  color: @iris;
+}
+
+#network.disabled, #network.disconected {
+  color: @surface;
+  background: @love;
+  border: 0;
+}
+
+#custom-kbd_backlight.on {
+  color: @surface;
+  background: @gold;
+  border: 0;
+}
+
+#battery.warning:not(.charging) {
+  color: @love;
+  border: 2px solid @love;
+}
+
+@keyframes blink {
+  to {
+    background-color: #fe9fa5;
+    color: @surface;
+  }
+}
+
+#battery.critical:not(.charging) {
+  color: @surface;
+  background: @love;
+  border: 0;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#battery.charging {
+  color: @surface;
+  background: @foam;
+  border: 0;
+}
+
