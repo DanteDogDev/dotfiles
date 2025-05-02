@@ -34,7 +34,6 @@
       "9": "九",
       "10": "十",
     },
-    "persistent-workspaces": { "*": 1 },
   },
 
   "custom/power": {
