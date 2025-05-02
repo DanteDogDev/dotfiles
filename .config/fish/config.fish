@@ -10,7 +10,7 @@ function y
 end
 
 function ssh-init
-  ssh-agent -c | source
+  eval (ssh-agent -c)
   ssh-add ~/.ssh/id_ed25519
 end
 
