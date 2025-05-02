@@ -35,6 +35,7 @@ YAY=(
   # asus
   asusctl
   supergfxctl
+  rog-control-center
   # application
   vesktop
 )

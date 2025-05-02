@@ -31,20 +31,16 @@ menuitem {
 	border-radius: 15px;
 }
 
-#custom-power, #clock, #workspaces,
-#pulseaudio, #network, #backlight,
-#custom-kbd_backlight, #tray, #battery, 
-#window, #bluetooth {
+
+#custom-power, #workspaces, #pulseaudio, #network,
+#custom-backlight, #tray, #battery, 
+#window, #bluetooth, #clock, #power-profiles-daemon {
   padding: 2px 10px;
   border: 2px solid @border;
   color: @text;
   background: @background;
 }
 
-/* CLOCK */
-#clock {
-  font-weight: 900;
-}
 
 /* WORKSPACES */
 #workspaces button {
@@ -53,6 +49,17 @@ menuitem {
 }
 #workspaces button.active {
   color: @selected;
+}
+
+/* POWER PROFILE */
+#power-profiles-daemon.power-saver {
+  color: @power_saver;
+}
+#power-profiles-daemon.balanced {
+  color: @balanced;
+}
+#power-profiles-daemon.performance {
+  color: @performance;
 }
 
 /* CURRENT WINDOW */
@@ -68,10 +75,12 @@ window#waybar.empty #window {
 #pulseaudio {
   color: @audio;
 }
-#pulseaudio.muted { /*AUDIO*/
+#pulseaudio.muted {
   color: @error;
+  border: 2px solid @error;
 }
-#pulseaudio.source-muted { /*MIC*/
+#pulseaudio.source-muted {
+  color: @error;
   border: 2px solid @error;
 }
 
@@ -84,10 +93,7 @@ window#waybar.empty #window {
 }
 
 /* BACKLIGHT */
-#backlight {
-  color: @backlight;
-}
-#custom-kbd_backlight.on {
+#custom-backlight {
   color: @backlight;
 }
 
@@ -110,4 +116,9 @@ window#waybar.empty #window {
   animation-timing-function: steps(12);
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+/* CLOCK */
+#clock {
+  font-weight: 900;
 }

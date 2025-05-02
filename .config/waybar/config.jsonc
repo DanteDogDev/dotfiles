@@ -3,41 +3,22 @@
   "spacing": 4,
   "modules-left": [
     "custom/power", 
-    "clock", 
-    "hyprland/window"
+    "hyprland/workspaces",
   ],
   "modules-center": [
-    "hyprland/workspaces"
+    "power-profiles-daemon",
   ],
   "modules-right": [
     "pulseaudio",
     "bluetooth",
     "network",
-    "backlight",
-    "custom/kbd_backlight",
+    "custom/backlight",
     "tray",
     "battery",
+    "clock", 
   ],
 
   // LEFT
-
-  "custom/power": {
-    "format": "  ",
-    "tooltip": false,
-    "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/scripts/power_menu.xml",
-    "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot",
-      "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate",
-    },
-  },
-
-  "clock": {
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y / %m / %d}",
-  },
 
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -56,11 +37,31 @@
     "persistent-workspaces": { "*": 1 },
   },
 
+  "custom/power": {
+    "format": "  ",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/scripts/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "shutdown",
+      "reboot": "reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate",
+    },
+  },
+
   // MIDDLE
 
-  "hyprland/window": {
-    "format": "",
-    "icon": true,
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "Performance",
+      "balanced": "Balanced",
+      "power-saver": "Quite"
+    }
   },
 
   // RIGHT PART
@@ -103,9 +104,9 @@
     "format-icons": ["󰃞", "󰃟", "󰃠"],
   },
 
-  "custom/kbd_backlight": {
+  "custom/backlight": {
     "format": "{}",
-    "exec": "sh ~/.config/waybar/scripts/kbd_backlight.sh",
+    "exec": "~/.config/waybar/scripts/kbd_backlight.sh",
     "interval": 1,
     "return-type": "json",
   },
@@ -122,9 +123,15 @@
     },
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
+    "format-charging": "{capacity}% {icon}",
+    "format-plugged": "{capacity}% {icon}",
     "format-alt": "{time} {icon}",
     "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+
+  },
+
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y / %m / %d}",
   },
 }

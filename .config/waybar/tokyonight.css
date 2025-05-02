@@ -20,7 +20,12 @@
 @define-color battery         #c3e88d;
 @define-color battery_warning #c53b53;
 
-/* tooltips */
+/* TOOLTIPS */
 @define-color tt_background   #1f2335;
 @define-color tt_border       #3d59a1;
 @define-color tt_text         #a9b1d6;
+
+/* POWER PROFILE */
+@define-color power_saver     #c3e88d;
+@define-color balanced        #ffc777;
+@define-color performance     #ee7e9f;
