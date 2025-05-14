@@ -28,4 +28,5 @@ alias nv='fd --hidden --type f --exclude .git | fzf --reverse | xargs nvim'
 alias lg='lazygit'
 
 
-alias dario='fastfetch'
+alias dario='/bin/fastfetch'
+alias fastfetch='fastfetch --logo small'
