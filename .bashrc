@@ -8,4 +8,6 @@ alias diff='delta'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias config-lazy='lazygit -git-dir=$HOME/dotfiles --work-tree=$HOME'
 
+eval "$(keychain --eval --quiet id_ed25519)"
+
 fish
