@@ -13,9 +13,11 @@ return {
     },
     linters_by_ft = {
       markdown = { "markdownlint-cli2" },
+      cmake = { "cmakelint" },
     },
     lsp = {
       keymaps = {
+        -- stylua: ignore
         {mode = "n", keys = "<leader>ch", action = "<CMD>LspClangdSwitchSourceHeader<CR>", opts = {desc = "Switch to Source Header"}, ft = {"cpp","c"}},
       },
     },
@@ -26,7 +28,7 @@ return {
         ["${DATE}"] = function() return os.date("%d/%m/%y") end,
         ["${AUTHOR}"] = function() return vim.fn.system("git config user.name"):gsub("\n", "") end,
         ["${EMAIL}"] = function() return vim.fn.system("git config user.email"):gsub("\n", "") end,
-        ["${PROJECT}"] = function() return vim.fn.system('powershell -Command "Split-Path -Leaf (Get-Location)"'):gsub("\n", "") end,
+        ["${DIR}"] = function() local path = vim.fn.expand("%:p:h") return path:match("([^/\\]+)$")end,
       },
     },
   },

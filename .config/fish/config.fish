@@ -15,12 +15,13 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias delta='delta --side-by-side'
 alias diff='delta'
+alias lg='lazygit'
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias config-lazy='lazygit -git-dir=$HOME/dotfiles --work-tree=$HOME'
 
 alias nv='fd --hidden --type f --exclude .git | fzf --reverse | xargs nvim'
-alias lg='lazygit'
+alias c='cd $(find * -type d | fzf)'
 
 
 alias dario='/bin/fastfetch'

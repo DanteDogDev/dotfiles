@@ -2,6 +2,7 @@ PACMAN=(
   # hyprland
   hyprland
   xdg-desktop-portal-hyprland
+  wayland-protocols
   hyprpaper
   hyprpicker
   gtk-engine-murrine
