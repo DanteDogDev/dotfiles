@@ -33,5 +33,3 @@ return {
     },
   },
 }
-
---vim.api.nvim_buf_set_keymap(0,"n","<leader>ch","<CMD>LspClangdSwitchSourceHeader<CR>", {desc = "Switch to Source Header",silent = true})
