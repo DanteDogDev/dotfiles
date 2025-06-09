@@ -1,5 +1,4 @@
-function fish_greeting
-end
+set -U fish_greeting ""
 function y
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
 	yazi $argv --cwd-file="$tmp"
@@ -9,7 +8,7 @@ function y
 	rm -f -- "$tmp"
 end
 
-fish_config theme dump > ~/.config/fish/tokyonight_night.theme
+fish_config theme dump > ~/.config/fish/themes/tokyonight_night.theme
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -26,3 +25,5 @@ alias c='cd $(find * -type d | fzf)'
 
 alias dario='/bin/fastfetch'
 alias fastfetch='fastfetch --logo small'
+
+zoxide init fish | source
