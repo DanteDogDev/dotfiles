@@ -1,0 +1,135 @@
+{
+  "height": 24,
+  "spacing": 4,
+  "modules-left": [
+    "custom/power", 
+    "hyprland/workspaces",
+  ],
+  "modules-center": [
+    "power-profiles-daemon",
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "bluetooth",
+    "network",
+    "custom/backlight",
+    "tray",
+    "battery",
+    "clock", 
+  ],
+
+  // LEFT
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
+    },
+  },
+
+  "custom/power": {
+    "format": "  ",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/scripts/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "shutdown",
+      "reboot": "reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate",
+    },
+  },
+
+  // MIDDLE
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "Performance",
+      "balanced": "Balanced",
+      "power-saver": "Quite"
+    }
+  },
+
+  // RIGHT PART
+
+  "pulseaudio": {
+    "format": "{volume}% {icon}   {format_source}",
+    "format-muted": "  {format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "default": ["", "", ""],
+    },
+    "on-click": "pavucontrol",
+  },
+
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "󰂲",
+    "format-off": "󰂯 {status} (notify Dante)",
+    "interval": 30,
+    "on-click": "blueman-manager",
+    "format-no-controller": "󰂯 {status}"
+  },
+
+  "network": {
+    "format-wifi": "{essid} {icon}",
+    "format-ethernet": "Ethernet 󰈀",
+    "tooltip-format": " {ifname} via {gwaddri}",
+    "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+    "tooltip-format-disconnected": "Disconnected",
+    "format-linked": "No IP ",
+    "format-disconnected": "󰤮",
+    "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+    "on-click": "nm-connection-editor",
+  },
+
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+  },
+
+  "custom/backlight": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/kbd_backlight.sh",
+    "interval": 1,
+    "return-type": "json",
+  },
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 8,
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{capacity}% {icon}",
+    "format-full": "{capacity}% {icon}",
+    "format-charging": "{capacity}% {icon}",
+    "format-plugged": "{capacity}% {icon}",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+
+  },
+
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B %d %a}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+}

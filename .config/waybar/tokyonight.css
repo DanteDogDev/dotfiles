@@ -1,0 +1,31 @@
+/* status bar */
+@define-color background      #1f2335;
+@define-color border          #3d59a1;
+@define-color text            #7aa2f7;
+
+@define-color unselected      #414868;
+@define-color selected        #ee7e9f;
+@define-color error           #ee7e9f;
+
+/* AUDIO */
+@define-color audio           #7dcfff;
+
+/* NETWORK */
+@define-color network         #9d7cd8;
+
+/* BACKLIGHT */
+@define-color backlight       #ffc777;
+
+/* BATTERY */
+@define-color battery         #c3e88d;
+@define-color battery_warning #c53b53;
+
+/* TOOLTIPS */
+@define-color tt_background   #1f2335;
+@define-color tt_border       #3d59a1;
+@define-color tt_text         #a9b1d6;
+
+/* POWER PROFILE */
+@define-color power_saver     #c3e88d;
+@define-color balanced        #ffc777;
+@define-color performance     #ee7e9f;
