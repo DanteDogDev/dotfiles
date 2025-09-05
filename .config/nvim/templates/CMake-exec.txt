@@ -1,0 +1,15 @@
+project(${DIR})
+
+file(GLOB_RECURSE SRC CONFIGURE_DEPENDS
+    "*.cpp"
+    "*.hpp"
+    "*.c"
+    "*.h"
+)
+
+add_executable(${DIR} ${SRC})
+
+target_precompile_headers(${DIR} PRIVATE ${PCH_DIR})
+target_link_libraries(${DIR} PRIVATE
+  ...
+)
