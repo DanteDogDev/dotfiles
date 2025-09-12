@@ -1,0 +1,6 @@
+# yazi.toml
+[mgr]
+[open]
+prepend_rules = [
+	{ name = "*.html", use = [ "open" ] },
+]
