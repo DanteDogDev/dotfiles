@@ -3,9 +3,6 @@ function fancy_timestamp -d "A fancy time stamp"
 
 	set -q timestamp_colors; set -g timestamp_colors \
 		89B4FA \
-		CBA6F7 \
-		FAB387 \
-		B4BEFE \
 	;
 	set -l C $(random 1 $(count $timestamp_colors));
 
