@@ -4,4 +4,4 @@ vim.filetype.add({
     dox = "doxygen",
   },
 })
-vim.lsp.enable({ "lua_ls", "clangd", "marksman", "harper_ls", "cmake", "glslls", "glsl_analyzer" })
+vim.lsp.enable({ "lua_ls", "clangd", "cmake" })
