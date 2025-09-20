@@ -12,6 +12,7 @@ fish_config theme dump > ~/.config/fish/themes/tokyonight_night.theme
 
 set -gx EDITOR nvim
 
+alias please='sudo'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias delta='delta --side-by-side'
