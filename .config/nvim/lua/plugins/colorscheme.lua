@@ -1,12 +1,6 @@
 return {
-  -- {
-  --   "projekt0n/github-nvim-theme",
-  --   enabled = false,
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd("colorscheme github_dark")
-  --   end,
-  -- },
+  -- { "wnkz/monoglow.nvim" },
+  -- { "projekt0n/github-nvim-theme" },
   {
     "folke/tokyonight.nvim",
     priority = 1000,

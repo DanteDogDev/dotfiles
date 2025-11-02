@@ -11,6 +11,7 @@ end
 fish_config theme dump > ~/.config/fish/themes/tokyonight_night.theme
 
 set -gx EDITOR nvim
+set -Ux fish_user_paths $HOME/.local/bin $fish_user_paths
 
 alias please='sudo'
 alias ls='ls --color=auto'
