@@ -32,5 +32,3 @@ alias dario='/bin/fastfetch'
 alias fastfetch='fastfetch --logo small'
 
 zoxide init fish | source
-
-thefuck --alias | source
