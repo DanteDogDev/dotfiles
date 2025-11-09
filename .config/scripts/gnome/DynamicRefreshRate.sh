@@ -29,9 +29,9 @@ scale=$(gnome-monitor-config list | grep 'Logical monitor' | grep -o 'scale = [^
 echo scale: $scale
 echo Hz: $refresh_rate_int, Power: $power_status
 
-if [[ "$power_status" == "1" ]]; then
+if [[ $power_status == 1 ]]; then
     powerprofilesctl set performance
-  if [[ "$refresh_rate_int" == "60" ]]; then
+  if [[ $refresh_rate_int == 60 ]]; then
     gnome-monitor-config set -LpM eDP-1 -t normal -m 2880x1800@120.000 -s $scale
     echo Changing Hz to 120
     exit 0
@@ -39,7 +39,7 @@ if [[ "$power_status" == "1" ]]; then
   echo Hz is already 120
 else
     powerprofilesctl set power-saver
-  if [[ "$refresh_rate_int" == "120" ]]; then
+  if [[ $refresh_rate_int == 120 ]]; then
     gnome-monitor-config set -LpM eDP-1 -t normal -m 2880x1800@60.001 -s $scale
     echo Changing Hz to 60
     exit 0

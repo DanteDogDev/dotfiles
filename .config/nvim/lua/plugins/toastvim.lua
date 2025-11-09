@@ -12,7 +12,6 @@ return {
       json = { "prettier" },
     },
     linters_by_ft = {
-      markdown = { "markdownlint-cli2" },
       cmake = { "cmakelint" },
     },
     lsp = {
