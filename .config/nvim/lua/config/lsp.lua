@@ -4,4 +4,4 @@ vim.filetype.add({
     dox = "doxygen",
   },
 })
-vim.lsp.enable({ "lua_ls", "clangd", "cmake", "rust_analyzer", "java_language_server"})
+vim.lsp.enable({ "lua_ls", "clangd", "rust_analyzer", "java_language_server"})

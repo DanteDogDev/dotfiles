@@ -1,10 +1,10 @@
 project(${DIR})
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 file(GLOB_RECURSE SRC CONFIGURE_DEPENDS
-    "*.cpp"
-    "*.hpp"
-    "*.c"
-    "*.h"
+    "${CMAKE_SOURCE_DIR}/src/*.[ch]pp"
+    "${CMAKE_SOURCE_DIR}/src/*.[ch]"
 )
 
 add_executable(${DIR} ${SRC})
