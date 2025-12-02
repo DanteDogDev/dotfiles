@@ -2,7 +2,7 @@ return {
   "DanteDogDev/ToastVim",
   import = "toastvim.plugins",
   -- branch = "dev",
-  -- dir = "~/git/ToastVim/",
+  dir = "~/Git/ToastVim/",
   ---@type ToastVim.Config
   opts = {
     formatters_by_ft = {
@@ -11,7 +11,6 @@ return {
       json = { "prettier" },
     },
     linters_by_ft = {
-      -- cmake = { "cmakelint" },
     },
     lsp = {
       keymaps = {

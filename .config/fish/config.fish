@@ -8,17 +8,20 @@ function y
 	rm -f -- "$tmp"
 end
 
+source ~/.bash_profile
+
 fish_config theme dump > ~/.config/fish/themes/tokyonight_night.theme
 
 set -gx EDITOR nvim
 set -Ux fish_user_paths $HOME/.local/bin $fish_user_paths
 
-alias please='sudo'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias delta='delta --side-by-side'
 alias diff='delta'
+
 alias lg='lazygit'
+alias please='sudo'
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias config-lazy='lazygit -git-dir=$HOME/dotfiles --work-tree=$HOME'

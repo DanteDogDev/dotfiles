@@ -4,5 +4,8 @@ vim.filetype.add({
     dox = "doxygen",
   },
 })
--- prettier, style_lua, clangd, lua-language-server,
-vim.lsp.enable({ "lua_ls", "clangd"})
+
+-- prettier,
+vim.lsp.enable({ "lua_ls" }) -- lua-language-server, style_lua,
+vim.lsp.enable({ "clangd" }) -- clangd,
+vim.lsp.enable({ "rust_analyzer", "bacon_ls" }) -- rust-analyzer, bacon, bacon-ls
