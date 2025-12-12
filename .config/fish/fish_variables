@@ -1,5 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export EDITOR:nvim
+SETUVAR --export --path PATH:/home/dantedogdev/\x2ecargo/bin\x1e/home/dantedogdev/\x2elocal/bin\x1e/home/dantedogdev/bin\x1e/usr/local/bin\x1e/usr/bin
 SETUVAR __fish_initialized:3800
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr

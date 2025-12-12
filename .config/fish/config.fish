@@ -8,11 +8,11 @@ function y
 	rm -f -- "$tmp"
 end
 
-source ~/.bash_profile
 
 fish_config theme dump > ~/.config/fish/themes/tokyonight_night.theme
 
-set -gx EDITOR nvim
+set -Ux EDITOR nvim
+set -Ux PATH $HOME/.cargo/bin $PATH
 set -Ux fish_user_paths $HOME/.local/bin $fish_user_paths
 
 alias ls='ls --color=auto'
