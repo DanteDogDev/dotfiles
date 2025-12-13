@@ -8,4 +8,4 @@ vim.filetype.add({
 -- prettier,
 vim.lsp.enable({ "lua_ls" }) -- lua-language-server, style_lua,
 vim.lsp.enable({ "clangd" }) -- clangd,
-vim.lsp.enable({ "rust_analyzer", "bacon_ls" }) -- rust-analyzer, bacon, bacon-ls
+-- vim.lsp.enable({ "rust_analyzer"}) -- rust-analyzer, -- INSTALL WITH PACKAGE MANAGER NOT MASON
