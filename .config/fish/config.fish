@@ -12,13 +12,12 @@ end
 fish_config theme dump > ~/.config/fish/themes/tokyonight_night.theme
 
 set -Ux EDITOR nvim
-set -Ux PATH $HOME/.cargo/bin $PATH
-set -Ux fish_user_paths $HOME/.local/bin $fish_user_paths
+set -Ua fish_user_paths $HOME/.cargo/bin
+set -Ua fish_user_paths $HOME/.local/bin
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias delta='delta --side-by-side'
-alias diff='delta'
 
 alias lg='lazygit'
 alias please='sudo'
