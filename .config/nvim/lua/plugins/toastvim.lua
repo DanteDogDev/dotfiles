@@ -1,7 +1,6 @@
 return {
   "DanteDogDev/ToastVim",
   import = "toastvim.plugins",
-  -- branch = "dev",
   dir = "~/git/ToastVim/",
   ---@type ToastVim.Config
   opts = {
