@@ -61,7 +61,7 @@
 # Networking
 ##################################################
 
-	networking.hostName = "kaveh";
+	networking.hostName = "tortilla";
 
 	networking.networkmanager.enable = true;
 	networking.wireless.enable = true;
@@ -106,7 +106,7 @@
 # Users
 ##################################################
 
-	users.users.xein = {
+	users.users.dantedogdev = {
 		isNormalUser = true;
 		shell = pkgs.zsh;
 		extraGroups = [ "wheel" "video" ];
@@ -152,13 +152,13 @@
 		description = "Update flake inputs and rebuild NixOS";
 		serviceConfig = {
 			Type = "oneshot";
-			WorkingDirectory = "/home/xein/dotfiles";
+			WorkingDirectory = "/home/dantedogdev/dotfiles";
 			Nice = 19;
 			IOSchedulingClass = "idle";
 			ExecStart = "${pkgs.writeShellScript "flake-update" ''
 				set -e
-				${pkgs.nix}/bin/nix flake update --flake /home/xein/dotfiles
-				${pkgs.nixos-rebuild}/bin/nixos-rebuild switch --flake /home/xein/dotfiles#kaveh
+				${pkgs.nix}/bin/nix flake update --flake /home/dantedogdev/dotfiles
+				${pkgs.nixos-rebuild}/bin/nixos-rebuild switch --flake /home/dantedogdev/dotfiles#tortilla
 			''}";
 		};
 		unitConfig.ConditionACPower = true;

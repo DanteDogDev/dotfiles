@@ -17,7 +17,7 @@
 		shellAliases = {
 			n = "nvim";
 			g = "git";
-			rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles#kaveh";
+			rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles#tortilla";
 			devenv = "nix develop --command zsh";
 			local-llm = "nix develop ~/dotfiles/flakes/local-llm --command zsh";
 		};
@@ -28,8 +28,8 @@
 		lfs.enable = true;
 
 		settings = {
-			user.name = "Xein";
-			user.email = "xgonip@gmail.com";
+			user.name = "Dante Harper";
+			user.email = "dantedigdog@gmail.com";
 			core.editor = "nvim";
 			init.defaultBranch = "main";
 			push.autoSetupRemote = true;

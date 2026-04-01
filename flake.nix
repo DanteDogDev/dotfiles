@@ -13,7 +13,7 @@
 	let
 		system = "x86_64-linux";
 	in {
-		nixosConfigurations.kaveh = nixpkgs.lib.nixosSystem {
+		nixosConfigurations.tortilla = nixpkgs.lib.nixosSystem {
 			specialArgs = { inherit system; };
 			modules = [ 
 				./configuration.nix 
@@ -22,7 +22,7 @@
 					home-manager = {
 						useGlobalPkgs = true;
 						useUserPackages = true;
-						users.xein = import ./xein.nix;
+						users.dantedogdev = import ./dantedogdev.nix;
 						backupFileExtension = "backup";
 						extraSpecialArgs = { };
 					};

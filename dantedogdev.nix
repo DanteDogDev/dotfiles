@@ -6,11 +6,10 @@
 		./modules/shell.nix
 		./modules/coding.nix
 		./modules/gaming.nix
-		./modules/audio.nix
 	];
 
-	home.username = "xein";
-	home.homeDirectory = "/home/xein";
+	home.username = "dantedogdev";
+	home.homeDirectory = "/home/dantedogdev";
 	home.stateVersion = "25.11";
 
 	home.sessionVariables = {
