@@ -20,10 +20,11 @@ in
 		ripgrep
 		fzf
 		tree-sitter
-		nixd
-		emmylua-ls
+    github-cli
 
-		github-cli
-		github-copilot-cli
+    #LSP
+    emmylua-ls
+    nixd
+    gemini-cli
 	];
 }

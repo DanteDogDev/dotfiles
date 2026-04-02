@@ -15,11 +15,9 @@
 			PROMPT='%F{magenta}[%n@%m]%f %~ %F{white}>%f '
 		'';
 		shellAliases = {
-			n = "nvim";
-			g = "git";
 			rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles#tortilla";
 			devenv = "nix develop --command zsh";
-			local-llm = "nix develop ~/dotfiles/flakes/local-llm --command zsh";
+      ".." = "cd ..";
 		};
 	};
 
@@ -60,6 +58,5 @@
 	programs.zoxide = {
 		enable = true;
 		enableZshIntegration = true;
-		options = [ "--cmd cd" ];
 	};
 }

@@ -9,16 +9,16 @@
 # Boot
 ##################################################
 
-	boot.loader.systemd-boot.enable = true;
-	boot.loader.efi.canTouchEfiVariables = true;
-	boot.kernelPackages = pkgs.linuxPackages_latest;
-	boot.kernelParams = [ # NVIDIA DRM for Wayland
-		"nvidia-drm.modeset=1"
-		"nvidia-drm.fbdev=1"
-	];
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [ # NVIDIA DRM for Wayland
+    "nvidia-drm.modeset=1"
+    "nvidia-drm.fbdev=1"
+  ];
 
-	# iGPU module needed for hybrid graphics laptops
-	boot.initrd.kernelModules = [ "amdgpu" ];
+# iGPU module needed for hybrid graphics laptops
+boot.initrd.kernelModules = [ "amdgpu" ];
 
 ##################################################
 # NVIDIA stuff
@@ -79,10 +79,15 @@
 	services.greetd = {
 		enable = true;
 		settings.default_session = {
-			command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd gnome-session";
+			command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd gnome-session --time --remember --remember-user-session";
 			user = "greeter";
 		};
 	};
+
+  # keep user session information
+  systemd.tmpfiles.rules = [
+    "d /var/cache/tuigreet 0755 greeter greeter - -"
+  ];
 
 ##################################################
 # GNOME
@@ -93,7 +98,14 @@
 	services.xserver = {
 		enable = true;
 		displayManager.gdm.enable = true;
-		desktopManager.gnome.enable = true;
+    desktopManager.gnome = {
+      enable = true;
+      extraGSettingsOverridePackages = [ pkgs.mutter ];
+      extraGSettingsOverrides = ''
+        [org.gnome.mutter]
+        experimental-features=['scale-monitor-framebuffer']
+          '';
+    };
 	};
 
 ##################################################
@@ -135,10 +147,7 @@
 	environment.systemPackages = with pkgs; [
 		vim
 		wget
-
-# system info
-		macchina
-		hyfetch
+		fastfetch
 	];
 
 ##################################################

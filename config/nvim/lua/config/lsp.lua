@@ -7,12 +7,8 @@ vim.filetype.add({
 })
 
 -- prettier,
-vim.lsp.enable({ "emmylua_ls" }) -- lua_ls alternative
-vim.lsp.enable({ "clangd" }) -- clangd
-vim.lsp.enable({ "rust_analyzer"})
-vim.lsp.enable({ "nixd" })
-vim.lsp.enable({ "roslyn_ls" })
-vim.lsp.enable({ "ts_ls" })
-vim.lsp.enable({ "html" })
-vim.lsp.enable({ "cssls" })
-vim.lsp.enable({ "buff_ls" })
+vim.lsp.enable({ "emmylua_ls" }) -- lua
+vim.lsp.enable({ "ts_ls","html","cssls" }) -- javascrip
+vim.lsp.enable({ "clangd" }) -- clangd,
+vim.lsp.enable({ "ruff", "pyright" }) -- lsp for python
+vim.lsp.enable({ "nixd" }) -- nix

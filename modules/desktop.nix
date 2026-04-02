@@ -3,7 +3,7 @@
 let
 	dotfiles = "${config.home.homeDirectory}/dotfiles/config";
 	create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
-	wallpaper = "${config.home.homeDirectory}/dotfiles/wallpapers/genshin-venti5.jpeg";
+	wallpaper = "${config.home.homeDirectory}/dotfiles/wallpapers/fox3.png";
 in {
 
 dconf.settings = {
@@ -44,23 +44,15 @@ dconf.settings = {
 home.packages = with pkgs; [
 	gnome-shell-extensions
 	gnomeExtensions.blur-my-shell
+  gnomeExtensions.burn-my-windows
 	gnome-tweaks
 
 	# Terminal & utilities
 	wezterm
-	jq
-	brightnessctl
-
-	# Screenshot
-	gnome-screenshot
-	satty
 
 	# Fonts
 	monocraft
 	nerd-fonts.jetbrains-mono
-
-	# Cursor theme
-	rose-pine-cursor
 ];
 
 # Wezterm configuration with not-modern taskbar
