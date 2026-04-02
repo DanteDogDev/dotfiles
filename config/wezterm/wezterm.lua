@@ -9,6 +9,8 @@ config.enable_tab_bar = true
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = false
 
+config.window_close_confirmation = 'NeverPrompt'
+
 config.font_size = 12
 config.window_background_opacity = 0.9
 

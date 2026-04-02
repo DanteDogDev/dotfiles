@@ -12,7 +12,11 @@
 			save = 10000;
 		};
 		initContent = ''
-			PROMPT='%F{magenta}[%n@%m]%f %~ %F{white}>%f '
+			if [[ -n "$IN_NIX_SHELL" ]]; then
+				PROMPT='%F{cyan}[%n@%m]%f %~ %F{white}>%f '
+			else
+				PROMPT='%F{magenta}[%n@%m]%f %~ %F{white}>%f '
+			fi
 		'';
 		shellAliases = {
 			rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles#tortilla";
