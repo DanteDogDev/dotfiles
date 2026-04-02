@@ -1,18 +1,15 @@
 return {
   "DanteDogDev/ToastVim",
   import = "toastvim.plugins",
-  -- branch = "dev",
-  -- dir = "~/git/ToastVim/",
+  dir = "~/git/ToastVim/",
   ---@type ToastVim.Config
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
-      markdown = { "markdownlint-cli2", "markdown-toc" },
       jsonc = { "prettier" },
       json = { "prettier" },
     },
     linters_by_ft = {
-      cmake = { "cmakelint" },
     },
     lsp = {
       keymaps = {

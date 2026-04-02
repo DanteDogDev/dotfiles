@@ -8,17 +8,19 @@ function y
 	rm -f -- "$tmp"
 end
 
+
 fish_config theme dump > ~/.config/fish/themes/tokyonight_night.theme
 
-set -gx EDITOR nvim
-set -Ux fish_user_paths $HOME/.local/bin $fish_user_paths
+set -Ux EDITOR nvim
+set -Ua fish_user_paths $HOME/.cargo/bin
+set -Ua fish_user_paths $HOME/.local/bin
 
-alias please='sudo'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias delta='delta --side-by-side'
-alias diff='delta'
+
 alias lg='lazygit'
+alias please='sudo'
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias config-lazy='lazygit -git-dir=$HOME/dotfiles --work-tree=$HOME'
@@ -32,5 +34,3 @@ alias dario='/bin/fastfetch'
 alias fastfetch='fastfetch --logo small'
 
 zoxide init fish | source
-
-thefuck --alias | source

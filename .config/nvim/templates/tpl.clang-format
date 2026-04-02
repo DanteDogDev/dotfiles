@@ -93,6 +93,6 @@ SpacesInAngles: Never
 SpacesInContainerLiterals: false
 SpacesInLineCommentPrefix:
   Minimum: 1
-  Maximum: 0
+  Maximum: 1
 SpacesInParens: Never
 SpacesInSquareBrackets: false

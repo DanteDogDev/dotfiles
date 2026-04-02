@@ -33,10 +33,9 @@ require("lazy").setup({
   performance = {
     rtp = {
       disabled_plugins = {
-        "netrwPlugin",
         "tarPlugin",
         "tohtml",
-        -- "tutor",
+        "netrwPlugin",
       },
     },
   },
