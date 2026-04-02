@@ -19,6 +19,7 @@
 			fi
 		'';
 		shellAliases = {
+			lg = "lazygit";
 			rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles#tortilla";
 			devenv = "nix develop --command zsh";
       ".." = "cd ..";
