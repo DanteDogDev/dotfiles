@@ -21,10 +21,10 @@ in
 		fzf
 		tree-sitter
     github-cli
+    gemini-cli
 
     #LSP
     emmylua-ls
     nixd
-    gemini-cli
 	];
 }
