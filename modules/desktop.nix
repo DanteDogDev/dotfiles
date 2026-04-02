@@ -6,11 +6,16 @@ let
 	wallpaper = "${config.home.homeDirectory}/dotfiles/wallpapers/fox3.png";
 in {
 
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
+
 dconf.settings = {
 	"org/gnome/shell" = {
 		disable-user-extensions = false;
 		enabled-extensions = [
 			"blur-my-shell@aunetx"
+      "burn-my-windows@schneegans.github.com"
 		];
 	};
 
