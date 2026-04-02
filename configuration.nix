@@ -79,7 +79,7 @@ boot.initrd.kernelModules = [ "amdgpu" ];
 	services.greetd = {
 		enable = true;
 		settings.default_session = {
-			command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd gnome-session --time --remember --remember-user-session";
+			command = "${pkgs.tuigreet}/bin/tuigreet --cmd gnome-session --time --remember --remember-user-session";
 			user = "greeter";
 		};
 	};
@@ -93,7 +93,7 @@ boot.initrd.kernelModules = [ "amdgpu" ];
 # GNOME
 ##################################################
 
-	services.gnome.core-utilities.enable = true;
+  services.gnome.core-apps.enable = true;
 	
   environment.gnome.excludePackages = (with pkgs; [
     gnome-tour
@@ -111,8 +111,8 @@ boot.initrd.kernelModules = [ "amdgpu" ];
     seahorse
   ]);
 	
-	services.xserver = {
-		enable = true;
+  services.xserver.enable = true;
+	services = {
 		displayManager.gdm.enable = true;
     desktopManager.gnome = {
       enable = true;
