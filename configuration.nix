@@ -95,6 +95,22 @@ boot.initrd.kernelModules = [ "amdgpu" ];
 
 	services.gnome.core-utilities.enable = true;
 	
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-tour
+    epiphany
+    gnome-user-docs
+    yelp
+    gnome-font-viewer
+    gnome-maps
+    gnome-console
+    gnome-characters
+    gnome-clocks
+    gnome-contacts
+    gnome-weather
+    simple-scan
+    seahorse
+  ]);
+	
 	services.xserver = {
 		enable = true;
 		displayManager.gdm.enable = true;
