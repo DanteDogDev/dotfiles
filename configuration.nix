@@ -9,8 +9,21 @@
 # Boot
 ##################################################
 
-  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.loader.grub = {
+    enable = true;
+    device = "nodev";
+    efiSupport = true;
+    useOSProber = true;
+    configurationLimit = 10;
+
+    extraConfig = ''
+      terminal_input console
+      terminal_output console
+    '';
+  };
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ # NVIDIA DRM for Wayland
     "nvidia-drm.modeset=1"
