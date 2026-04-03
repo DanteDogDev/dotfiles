@@ -15,11 +15,14 @@ in
 		neovim
 		lua
 		lua55Packages.luarocks_bootstrap
-		lazygit
 		fd
 		ripgrep
 		fzf
 		tree-sitter
+    p7zip
+
+    #CLI
+    lazygit
     github-cli
     gemini-cli
 
