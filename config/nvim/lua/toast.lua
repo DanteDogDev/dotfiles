@@ -19,7 +19,7 @@ return {
 			expressions = {
 				["${FILE}"] = function() return vim.fn.expand("%:t") end,
 				["${FILENAME}"] = function() return vim.fn.expand("%:t:r") end,
-				["${DATE}"] = function() return os.date("%d/%m/%y") end,
+				["${DATE}"] = function() return os.date("%d %b %y") end,
 				["${AUTHOR}"] = function() return vim.fn.system("git config user.name"):gsub("\n", "") end,
 				["${EMAIL}"] = function() return vim.fn.system("git config user.email"):gsub("\n", "") end,
 				["${DIR}"] = function()
