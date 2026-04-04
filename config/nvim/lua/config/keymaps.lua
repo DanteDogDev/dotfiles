@@ -62,3 +62,12 @@ end
 vim.keymap.set("i", "<S-Tab>", tab_backward, { expr = true })
 vim.keymap.set("i", "<Tab>", tab_forward, { expr = true })
 vim.keymap.set("i", "<C-l>", "<Tab>")
+
+-- Disable lsp default keymaps
+pcall(vim.keymap.del, "n", "gra")
+pcall(vim.keymap.del, "n", "gri")
+pcall(vim.keymap.del, "n", "grn")
+pcall(vim.keymap.del, "n", "grr")
+pcall(vim.keymap.del, "n", "grt")
+pcall(vim.keymap.del, "n", "grx")
+
