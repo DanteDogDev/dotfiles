@@ -30,38 +30,38 @@ local tab_forward = function()
 	return "<C-o>A"
 end
 
-local tab_backward = function()
-	local line = vim.api.nvim_get_current_line()
-	local col = vim.api.nvim_win_get_cursor(0)[2]
-	if col == nil or col == 0 then
-		return
-	end
-	line = line:sub(0, col):reverse()
-	-- If next char is a symbol move past it
-	local char = line:match("^.")
-	for c in symbols:gmatch(".") do
-		if char == c and col == vim.fn.col("$") - 1 then
-			return "<C-o>i"
-		elseif char == c then
-			return "<C-o>h"
-		end
-	end
-	-- Find next symbol in line and move to it
-	local result = line:match("[" .. pattern .. "]")
-	if result ~= nil then
-		if col == vim.fn.col("$") - 1 then
-			return "<C-o>i"
-		end
-		print("find" .. result:sub(1, 1))
-		return "<C-o>T" .. result:sub(1, 1)
-	end
-	-- else go to start of the line
-	return "<C-o>I"
-end
+-- local tab_backward = function()
+-- 	local line = vim.api.nvim_get_current_line()
+-- 	local col = vim.api.nvim_win_get_cursor(0)[2]
+-- 	if col == nil or col == 0 then
+-- 		return
+-- 	end
+-- 	line = line:sub(0, col):reverse()
+-- 	-- If next char is a symbol move past it
+-- 	local char = line:match("^.")
+-- 	for c in symbols:gmatch(".") do
+-- 		if char == c and col == vim.fn.col("$") - 1 then
+-- 			return "<C-o>i"
+-- 		elseif char == c then
+-- 			return "<C-o>h"
+-- 		end
+-- 	end
+-- 	-- Find next symbol in line and move to it
+-- 	local result = line:match("[" .. pattern .. "]")
+-- 	if result ~= nil then
+-- 		if col == vim.fn.col("$") - 1 then
+-- 			return "<C-o>i"
+-- 		end
+-- 		print("find" .. result:sub(1, 1))
+-- 		return "<C-o>T" .. result:sub(1, 1)
+-- 	end
+-- 	-- else go to start of the line
+-- 	return "<C-o>I"
+-- end
 
-vim.keymap.set("i", "<S-Tab>", tab_backward, { expr = true })
+-- vim.keymap.set("i", "<S-Tab>", tab_backward, { expr = true })
+vim.keymap.set("i", "<S-Tab>", "<Tab>")
 vim.keymap.set("i", "<Tab>", tab_forward, { expr = true })
-vim.keymap.set("i", "<C-l>", "<Tab>")
 
 -- Disable lsp default keymaps
 pcall(vim.keymap.del, "n", "gra")
