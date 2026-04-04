@@ -1,3 +1,3 @@
 return {
-  'mrcjkb/rustaceanvim',
+	'mrcjkb/rustaceanvim',
 }
