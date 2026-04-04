@@ -16,14 +16,14 @@
 				PROMPT='%F{cyan}[%n@%m]%f %~ %F{white}>%f '
 			else
 				PROMPT='%F{magenta}[%n@%m]%f %~ %F{white}>%f '
-			fi
-		'';
+					fi
+					'';
 		shellAliases = {
-      nv = "fd --hidden --type f --exclude .git | fzf --reverse | xargs nvim";
+			nv = "fd --hidden --type f --exclude .git | fzf --reverse | xargs nvim";
 			lg = "lazygit";
 			rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles#tortilla";
 			devenv = "nix develop --command zsh";
-      ".." = "cd ..";
+			".." = "cd ..";
 		};
 	};
 
@@ -38,8 +38,8 @@
 			init.defaultBranch = "main";
 			push.autoSetupRemote = true;
 
-      pull.rebase = true;
-      rebase.autoStash = true;
+			pull.rebase = true;
+			rebase.autoStash = true;
 		};
 	};
 

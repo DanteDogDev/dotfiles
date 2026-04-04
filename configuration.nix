@@ -30,8 +30,8 @@
     "nvidia-drm.fbdev=1"
   ];
 
-# iGPU module needed for hybrid graphics laptops
-boot.initrd.kernelModules = [ "amdgpu" ];
+	# iGPU module needed for hybrid graphics laptops
+	boot.initrd.kernelModules = [ "amdgpu" ];
 
 ##################################################
 # NVIDIA stuff
@@ -122,6 +122,7 @@ boot.initrd.kernelModules = [ "amdgpu" ];
     gnome-weather
     simple-scan
     seahorse
+		# remove connections
   ]);
 	
   services.xserver.enable = true;

@@ -23,6 +23,7 @@
 
 	home.packages = with pkgs; [
 		vesktop
+		nodejs_25
 	];
 }
 
