@@ -29,5 +29,6 @@ in
     #LSP
     emmylua-ls
     nixd
+		prettier
 	];
 }
