@@ -1,7 +1,6 @@
 return {
   "DanteDogDev/ToastVim",
   import = "toastvim.plugins",
-  -- dir = "~/git/ToastVim/",
   ---@type ToastVim.Config
   opts = {
     formatters_by_ft = {
@@ -9,8 +8,7 @@ return {
       jsonc = { "prettier" },
       json = { "prettier" },
     },
-    linters_by_ft = {
-    },
+    linters_by_ft = {},
     lsp = {
       keymaps = {
         -- stylua: ignore
