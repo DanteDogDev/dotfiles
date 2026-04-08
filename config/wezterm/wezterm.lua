@@ -27,6 +27,8 @@ config.window_padding = {
   bottom = 0,
 }
 
+config.keys = {}
+
 return config
 
 -- Multiplexing shortcuts
