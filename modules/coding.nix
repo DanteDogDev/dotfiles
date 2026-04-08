@@ -30,6 +30,7 @@ in
 		fzf
 		tree-sitter
 		p7zip
+		nodejs_25
 
 		#CLI
 		lazygit

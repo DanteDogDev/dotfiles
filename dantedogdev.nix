@@ -23,7 +23,7 @@
 
 	home.packages = with pkgs; [
 		vesktop
-		nodejs_25
+		godot
 	];
 }
 
