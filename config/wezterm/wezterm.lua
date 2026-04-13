@@ -28,6 +28,7 @@ config.window_padding = {
 }
 
 config.keys = {
+  { key = 'Enter', mods = 'ALT', action = wezterm.action.DisableDefaultAssignment, },
 	{ key = "q", mods = "ALT", action = wezterm.action.ActivateTab(0) },
 	{ key = "w", mods = "ALT", action = wezterm.action.ActivateTab(1) },
 	{ key = "e", mods = "ALT", action = wezterm.action.ActivateTab(2) },
