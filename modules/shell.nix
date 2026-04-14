@@ -24,6 +24,8 @@
 			rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles#tortilla";
 			devenv = "nix develop --command zsh";
 			".." = "cd ..";
+			nix-clean = "sudo nix-collect-garbage -d";
+			nix-update = "cd ~/dotfiles && sudo nix flake update";
 		};
 	};
 
