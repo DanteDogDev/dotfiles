@@ -86,8 +86,6 @@ modernize-pass-by-value,
 modernize-use-transparent-functors,
 modernize-shrink-to-fit,
 
-misc-header-include-cycle,
-misc-include-cleaner,
 misc-throw-by-value-catch-by-reference,
 
 cppcoreguidelines-avoid-goto,

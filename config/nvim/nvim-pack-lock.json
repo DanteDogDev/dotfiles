@@ -1,0 +1,8 @@
+{
+  "plugins": {
+    "xmake.nvim": {
+      "rev": "32462f8bfbb5022c0772337dbef1efbf8610b392",
+      "src": "https://github.com/Mythos-404/xmake.nvim"
+    }
+  }
+}
