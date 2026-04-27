@@ -5,5 +5,7 @@
 		protonup-qt
 		mangohud
 		gamescope
+		heroic
+		ckan
 	];
 }

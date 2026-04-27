@@ -1,6 +1,6 @@
 ---
-ColumnLimit: 150
-UseTab: Never
+ColumnLimit: 130
+UseTab: ForIndentation
 TabWidth: 2
 AccessModifierOffset: -2
 AlignAfterOpenBracket: BlockIndent
@@ -10,17 +10,16 @@ AlignConsecutiveAssignments:
 AlignEscapedNewlines: LeftWithLastLine
 AlignTrailingComments:
   Kind: Always
-  OverEmptyLines: 1
+  OverEmptyLines: 2
 AllowAllArgumentsOnNextLine: true
 AllowAllParametersOfDeclarationOnNextLine: true
 AllowShortBlocksOnASingleLine: Always
 AllowShortCaseExpressionOnASingleLine: true
 AllowShortCaseLabelsOnASingleLine: true
-AllowShortCompoundRequirementOnASingleLine: false
+AllowShortCompoundRequirementOnASingleLine: true
 AllowShortEnumsOnASingleLine: false
-AllowShortFunctionsOnASingleLine: Empty
-AllowShortIfStatementsOnASingleLine: Never
-AllowShortLambdasOnASingleLine: Empty
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortLambdasOnASingleLine: All
 BinPackArguments: false
 BinPackParameters: true
 BracedInitializerIndentWidth: 2
@@ -30,10 +29,9 @@ BreakBeforeConceptDeclarations: Always
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: BeforeColon
 BreakFunctionDefinitionParameters: false
-BreakInheritanceList: AfterComma
 BreakTemplateDeclarations: Yes
 CompactNamespaces: false
-Cpp11BracedListStyle: false
+Cpp11BracedListStyle: true
 EmptyLineAfterAccessModifier: Never
 EmptyLineBeforeAccessModifier: Always
 FixNamespaceComments: false
@@ -75,7 +73,7 @@ SpaceBeforeCaseColon: false
 SpaceBeforeCpp11BracedList: true
 SpaceBeforeCtorInitializerColon: true
 SpaceBeforeInheritanceColon: true
-SpaceBeforeJsonColon: false
+SpaceBeforeJsonColon: true
 SpaceBeforeParensOptions:
   AfterControlStatements: true
   AfterFunctionDeclarationName: false
@@ -90,9 +88,11 @@ SpaceBeforeSquareBrackets: false
 SpaceInEmptyBlock: true
 SpacesBeforeTrailingComments: 4
 SpacesInAngles: Never
-SpacesInContainerLiterals: false
+SpacesInContainerLiterals: true
 SpacesInLineCommentPrefix:
   Minimum: 1
   Maximum: 1
 SpacesInParens: Never
 SpacesInSquareBrackets: false
+
+

@@ -1,4 +1,3 @@
-
 ---
 Checks: '-*,
 readability-identifier-naming,
@@ -46,11 +45,12 @@ performance-implicit-conversion-in-loop,
 performance-inefficient-algorithm,
 performance-inefficient-vector-operation,
 performance-move-const-arg,
-performance-no-int-to-ptr,
 performance-trivially-destructible,
 performance-type-promotion-in-math-fn,
 performance-unnecessary-copy-initialization,
 performance-unnecessary-value-param,
+performance-no-automatic-move, # experiment
+performance-noexcept-move-constructor,
 
 modernize-avoid-bind,
 modernize-avoid-c-arrays,
@@ -81,6 +81,10 @@ modernize-use-std-format,
 modernize-use-std-print,
 modernize-use-uncaught-exceptions,
 modernize-use-using,
+modernize-use-trailing-return-type,
+modernize-pass-by-value,
+modernize-use-transparent-functors,
+modernize-shrink-to-fit,
 
 misc-header-include-cycle,
 misc-include-cleaner,
@@ -91,8 +95,6 @@ cppcoreguidelines-init-variables,
 cppcoreguidelines-no-malloc,
 cppcoreguidelines-prefer-member-initializer,
 cppcoreguidelines-pro-type-cstyle-cast,
-cppcoreguidelines-pro-type-member-init,
-cppcoreguidelines-pro-type-static-cast-downcast,
 
 bugprone-assert-side-effect,
 bugprone-branch-clone,
@@ -116,47 +118,45 @@ bugprone-standalone-empty,
 bugprone-too-small-loop-variable,
 bugprone-unsafe-functions,
 bugprone-use-after-move,
-bugprone-virtual-near-miss
+bugprone-virtual-near-miss,
 '
 
 CheckOptions:
-  - key: readability-identifier-naming.GlobalVariablePrefix
-    value: 'g_'
-
-  - key: readability-identifier-naming.PublicMemberCase
-    value: camelBack
-
+  # Class and Struct: PascalCase
   - key: readability-identifier-naming.ClassCase
     value: CamelCase
   - key: readability-identifier-naming.StructCase
     value: CamelCase
 
-  - key: readability-identifier-naming.PrivateMemberCase
+  # Functions: camelBack
+  - key: readability-identifier-naming.FunctionCase
     value: camelBack
-  - key: readability-identifier-naming.PrivateMemberPrefix
-    value: 'm_'
-
-  - key: readability-identifier-naming.ProtectedMemberCase
+  - key: readability-identifier-naming.ClassMethodCase
     value: camelBack
-  - key: readability-identifier-naming.ProtectedMemberPrefix
-    value: 'm_'
 
-  - key: readability-identifier-naming.ConstexprVariableCase
-    value: UPPER_CASE
-
-  - key: readability-identifier-naming.MacroDefinitionCase
-    value: UPPER_CASE
-
-  - key: readability-identifier-naming.NamespaceCase
+  # Variables: lower_case
+  - key: readability-identifier-naming.MemberCase
     value: lower_case
-
-  - key: readability-identifier-naming.LocalVariableCase
+  - key: readability-identifier-naming.VariableCase
     value: lower_case
-
+  - key: readability-identifier-naming.GlobalVariableCase
+    value: lower_case
   - key: readability-identifier-naming.ParameterCase
     value: lower_case
 
+  # Namespace: lower_case
+  - key: readability-identifier-naming.NamespaceCase
+    value: lower_case
+
+  # Enum and Enum Constant (Enum::thing): CamelCase::lower_case
   - key: readability-identifier-naming.EnumCase
     value: CamelCase
   - key: readability-identifier-naming.EnumConstantCase
-    value: CamelCase
+    value: lower_case
+
+  # Macro: SCREAMING_CASE
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value: UPPER_CASE
+
+  - key: modernize-use-trailing-return-type.TransformLambdas
+    value: none

@@ -51,6 +51,7 @@ in {
 		gnomeExtensions.blur-my-shell
 		gnomeExtensions.burn-my-windows
 		gnome-tweaks
+		rnote
 
 		# Terminal & utilities
 		wezterm
