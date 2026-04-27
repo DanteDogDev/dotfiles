@@ -39,6 +39,7 @@ in
 
 		#LSP
 		emmylua-ls
+		lua-language-server
 		nixd
 		prettier
 	];
