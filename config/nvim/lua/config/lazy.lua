@@ -32,6 +32,7 @@ require("lazy").setup({
 		notify = false,
 	},
 	performance = {
+		reset_packpath = false,
 		rtp = {
 			disabled_plugins = {
 				"tarPlugin",
