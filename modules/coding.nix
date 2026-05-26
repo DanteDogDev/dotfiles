@@ -23,8 +23,8 @@ in
 
 	home.packages = with pkgs; [
 		neovim
-		lua
-		lua55Packages.luarocks_bootstrap
+		lua5_4
+		lua54Packages.luarocks_bootstrap
 		fd
 		ripgrep
 		fzf

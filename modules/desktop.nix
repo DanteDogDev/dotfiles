@@ -59,6 +59,10 @@ in {
 		# Fonts
 		monocraft
 		nerd-fonts.jetbrains-mono
+
+		# LibreOffice
+		onlyoffice-desktopeditors
+		renderdoc
 	];
 
 	# Wezterm configuration
