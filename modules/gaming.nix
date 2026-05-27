@@ -7,5 +7,6 @@
 		gamescope
 		heroic
 		ckan
+		prismlauncher
 	];
 }

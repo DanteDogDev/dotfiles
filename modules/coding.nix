@@ -42,5 +42,10 @@ in
 		lua-language-server
 		nixd
 		prettier
+
+		#Python
+		(python3.withPackages (ps: with ps; [ 
+			 pandas 
+		]))
 	];
 }
