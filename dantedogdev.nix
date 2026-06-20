@@ -22,7 +22,8 @@
 	};
 
 	home.packages = with pkgs; [
-		discord
+		# discord
+		vesktop
 		godot
 	];
 }

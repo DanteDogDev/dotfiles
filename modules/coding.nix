@@ -30,12 +30,14 @@ in
 		fzf
 		tree-sitter
 		p7zip
-		nodejs_25
+		nodejs
+		killall
+		cloc
 
 		#CLI
 		lazygit
 		github-cli
-		gemini-cli
+		antigravity-cli
 
 		#LSP
 		emmylua-ls

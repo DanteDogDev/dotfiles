@@ -122,13 +122,13 @@
     gnome-weather
     simple-scan
     seahorse
-		# remove connections
+		gnome-connections
   ]);
 	
   services.xserver.enable = true;
 	services = {
-		displayManager.gdm.enable = true;
-		displayManager.gdm.wayland = true;
+		# displayManager.gdm.enable = true;
+		# displayManager.gdm.wayland = true;
     desktopManager.gnome = {
       enable = true;
       extraGSettingsOverridePackages = [ pkgs.mutter ];
@@ -158,6 +158,49 @@
 		];
 	};
 
+	environment.localBinInPath = true;
+
+  services.envfs.enable = true;
+
+	# needed for nsight graphics
+	programs.nix-ld = {
+		enable = true;
+		libraries = with pkgs; [
+    libxcb-util
+    libxcb-cursor
+    libxcb-image
+    libxcb-keysyms
+    libxcb-wm
+
+    libxcb
+    libx11
+    libxext
+    libxrender
+    libxkbcommon
+    vulkan-loader
+    zstd
+
+		glib
+		libglvnd
+		glibc
+		stdenv.cc.cc
+
+		libpng
+		fontconfig
+		freetype
+
+		dbus
+		harfbuzz
+		zlib
+		expat
+
+		xorg.xcbutilrenderutil
+		libGL
+		nspr
+		nss
+		];
+	};
+
 ##################################################
 # Programs
 ##################################################
@@ -174,11 +217,14 @@
 ##################################################
 # System packages
 ##################################################
+	services.flatpak.enable = true;
+	services.packagekit.enable = true;
 
 	environment.systemPackages = with pkgs; [
 		vim
 		wget
 		fastfetch
+		gnome-software
 	];
 
 ##################################################
