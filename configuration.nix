@@ -194,7 +194,7 @@
 		zlib
 		expat
 
-		xorg.xcbutilrenderutil
+		libxcb-render-util
 		libGL
 		nspr
 		nss

@@ -6,7 +6,6 @@
 		./modules/shell.nix
 		./modules/coding.nix
 		./modules/gaming.nix
-		./modules/stalker-gamma.nix
 	];
 
 	home.username = "dantedogdev";
