@@ -198,6 +198,12 @@
 		libGL
 		nspr
 		nss
+
+		dotnet-sdk
+    icu
+    zlib
+
+		protonup-qt
 		];
 	};
 
