@@ -49,5 +49,10 @@ in
 		(python3.withPackages (ps: with ps; [ 
 			 pandas 
 		]))
+
+    vulkan-loader
+    vulkan-validation-layers
+    vulkan-extension-layer
+		vulkan-tools
 	];
 }

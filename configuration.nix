@@ -177,7 +177,6 @@
     libxext
     libxrender
     libxkbcommon
-    vulkan-loader
     zstd
 
 		glib
